@@ -8,7 +8,8 @@ Created on Tue Mar  2 20:48:30 2021
 
 import variables as v
 import setUp as su
-
+from colorama import Back,Fore,Style,init
+init(autoreset=True)
 #-------------------------------------------------------------------------------------------------------
 def createTable(expressions):
     exp={}
@@ -57,9 +58,9 @@ def printTable(table):
     dividers=""
     for i in range(len(headers)):
         dividers=dividers+"-"
-    print(dividers)
-    print(headers)
-    print(dividers)
+    print(Back.MAGENTA+Style.BRIGHT+Fore.WHITE+dividers)
+    print(Back.MAGENTA+Style.BRIGHT+Fore.WHITE+headers)
+    print(Back.MAGENTA+Style.BRIGHT+Fore.WHITE+dividers)
     
     printing=""
     for i in range(v.rows):
@@ -70,7 +71,7 @@ def printTable(table):
                 printing=printing+"| False"+v.separator[0:len(j)+4-1]+"|"
         print(printing)
         printing=""
-    print(dividers,"\n")
+    print(Back.MAGENTA+Style.BRIGHT+Fore.WHITE+dividers,"\n")
 #-------------------------------------------------------------------------------------------------------
 def orderTable(table):
     positiveTable={}
