@@ -36,7 +36,7 @@ print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 2.Usa solo mayúsculas para las vari
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 3.Introduce entre parentesis las premisas, separando todo con espacios.|")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 4.Separa el operador con su espacio también                            |")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 5.Los operadores aceptados son: v, ^, ->, <-> y ~                      |")
-print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 6.Ingresa SALIR para salir                                                 |")
+print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 6.Ingresa SALIR para salir                                             |")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| Ejemplo: ( p ^ q )                                                     |")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------------------------------------")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||")
