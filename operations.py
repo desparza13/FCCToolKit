@@ -38,7 +38,7 @@ def logicBiconditional(arg1, arg2): #Regresa los valores de una operación BICON
     
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------   
-def executeOperation(table, operator, arg1, arg2):
+def executeOperation(table, operator, arg1, arg2): #Ejecuta la operación indicada por el operador entre los argumentos que reciba y lo guarda en la tabla
     newPos = arg1+operator+arg2
     table[newPos]=[]
     for i, j in zip(table[arg1],table[arg2]):
@@ -54,7 +54,7 @@ def executeOperation(table, operator, arg1, arg2):
         table[newPos].append(result)
     return [newPos, table]
 #-------------------------------------------------------------------------------------------------------
-def evaluate(exps=[], var=-1):
+def evaluate(exps=[], var=-1): #Evalua las operaciones, necesita la ayuda de la ejecución de operación, marca el ritmo y hace que se operen todas las columnas como deben con recursividad
     if not exps:
         exps=v.variables['v'+str(v.variable-1)]
     argument2=""
@@ -83,9 +83,6 @@ def evaluate(exps=[], var=-1):
             su.renameExpressions(var,v.argument)
 
 #------------------------------------------------------------------------------------------------------- 
-    
-    
-    
     
     
     

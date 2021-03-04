@@ -44,56 +44,56 @@ def findParentheses (proposition):
             openP=i #Guardo la posicion donde abro
         if (parenthesesUndone < parenthesesCheck):
             exp = proposition[openP+1:closeP] #extraes lo que está dentro de los parentesis
-            oldProp=saveOperation(exp)
+            oldProp=saveOperation(exp) #Guardar expresión
             
-            if (closeP== len(proposition)-1):
-                newProposition = proposition[0:openP] + [oldProp]
-            if (openP==0):
-                newProposition = [oldProp] + proposition[closeP+1:len(proposition)]
-            if (openP!=0 and closeP != len(proposition)-1):
+            if (closeP== len(proposition)-1): #Si el parentesis que cierra está al final de la proposición
+                newProposition = proposition[0:openP] + [oldProp] #Guarda todo
+            if (openP==0): #Si abre en el inicio
+                newProposition = [oldProp] + proposition[closeP+1:len(proposition)] #Tener la anterior + la parte nueva
+            if (openP!=0 and closeP != len(proposition)-1): #Si no es de inicio a fin corto la parte que me importa
                 newProposition = proposition[0:openP]+[oldProp]+proposition[closeP:len(proposition)]
-            if (findFirst(newProposition, '(')!=-1):
+            if (findFirst(newProposition, '(')!=-1): #Si todavía hay parentesis seguir haciendo esto de forma recursiva
                 findParentheses(newProposition)
             else:
                 saveOperation(newProposition)
-                op.evaluate()
+                op.evaluate() #evaluar las proposiciones
                 return
-        parenthesesCheck=parenthesesUndone
+        parenthesesCheck=parenthesesUndone #Reestablecer valores
             
                 
 #-------------------------------------------------------------------------------------------------------
     
-def eliminateParentheses (proposition):
-    openP=findLast(proposition, '(')
-    newProposition=proposition[openP+1:len(proposition)]
-    closeP=openP+findFirst(newProposition, ')')+1
-    auxiliar=proposition[openP+1:closeP]
+def eliminateParentheses (proposition): #Quito los parentesis de la expresión para no rebuscarlos y quedarme solo con variables y operadores
+    openP=findLast(proposition, '(') #Busco el último parentesis que abre
+    newProposition=proposition[openP+1:len(proposition)] #Guardo del último parentesis que abre hasta el fin
+    closeP=openP+findFirst(newProposition, ')')+1 #Busco el primer parentesis que cierra
+    auxiliar=proposition[openP+1:closeP] #Guardo desde el primer parentesis al final sin incluir los parentesis, solo texto
     var=saveOperation(auxiliar)
     
-    argument=proposition[0:openP]
-    argument.append(var)
-    newProposition=proposition[closeP+1:len(proposition)]
-    argument=argument+newProposition
-    if findFirst(argument, '(') != -1:
-        eliminateParentheses(argument)
+    argument=proposition[0:openP] #Me quedo con lo anterior al parentesis
+    argument.append(var) #Añado lo que le quite los parentesis anteriormente
+    newProposition=proposition[closeP+1:len(proposition)] 
+    argument=argument+newProposition #Guardo lo anterior más el fin que no he checado
+    if findFirst(argument, '(') != -1: #Si quedan parentesis
+        eliminateParentheses(argument) #Sigo eliminando de manera recursiva
     else:
-        saveOperation(argument)
-        op.evaluate()
+        saveOperation(argument) #Guardo el argumento sin parentesis
+        op.evaluate() #evaluo el argumento
 
 #-------------------------------------------------------------------------------------------------------
-def renameExpressions(var,exp):
-    if(len(v.variables)==1):
-        op.evaluate(v.variables,var)
-    for key, values in v.variables.items():
+def renameExpressions(var,exp): #Renombra expresion
+    if(len(v.variables)==1): #Si solo hay una variable
+        op.evaluate(v.variables,var) #Evaluala directamente
+    for key, values in v.variables.items(): #Si no, recorres cada una y le das su valor
         for i in values:
             if i==var:
                 pos=v.variables[key].index(i)
                 v.truthTable[exp]=v.tableValues[exp]
                 v.variables[key][pos]=exp
-                op.evaluate(v.variables[key],key)
+                op.evaluate(v.variables[key],key) #Luego evaluas
                 return
 #-------------------------------------------------------------------------------------------------------            
-def saveOperation(op):
+def saveOperation(op): #Guarda un valor en variables
     var='v'+str(v.variable)
     v.variables[var]=op
     v.variable=v.variable+1
