@@ -39,9 +39,9 @@ print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 5.Los operadores aceptados son: v, ^
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 6.Ingresa SALIR para salir                                             |")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| Ejemplo: ( p ^ q )                                                     |")
 print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------------------------------------")
-print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||")
-print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(•ㅅ•) ||")
-print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ")
+print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||                                                (\__/) ||")
+print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(•ㅅ•) ||                                                 (•ㅅ•) ||")
+print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ                                                   / 　 づ")
 
 v.proposition=""
 while(v.proposition!="SALIR"):
@@ -50,6 +50,19 @@ while(v.proposition!="SALIR"):
     t.createTable(v.arguments)
     su.findParentheses(v.arguments)
     t.orderTable(v.tableValues)
-    
+    v.expressions={"P":[], "Q":[], "R":[], "S":[], "T":[], "U":[], "V":[], "W":[], "X":[], "Y":[], "Z":[]
+,"~P":[], "~Q":[], "~R":[], "~S":[], "~T":[], "~U":[], "~V":[], "~W":[], "~X":[], "~Y":[], "~Z":[]}
+    v.connectors={"^":0, "v":1, "->":2, "<->":3} 
+    v.variable=0
+    v.variables={}
+    v.values={}
+    v.tableValues={}
+    v.separator= "                                             "
+    v.rows=0
+    v.truthTable={}
+    v.finalsTable={}
+    v.finalTable={}
+    v.argument=""
+
 
     
