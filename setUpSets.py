@@ -52,6 +52,9 @@ def options():
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 3.A"+operator+"C                                                                  |")
     if(v.chosenOperation==1 or v.chosenOperation==2):
         print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 4.A"+operator+"(B"+operator+"C)                                                              |")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 5.B"+operator+"(A"+operator+"C)                                                              |")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 6.C"+operator+"(A"+operator+"B)                                                              |")
+
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                                                        |")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------------------------------------")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||                                                (\__/) ||")
@@ -114,6 +117,16 @@ def operate():
             union(v.newSet,v.a)
             print("AU(BUC) =",v.a,"U (",v.b,"U",v.c,")")
             print("AU(BUC) =",v.newSet)
+        elif (v.operation==5):
+            union(v.a, v.c)
+            union(v.b,v.newSet)
+            print("BU(AUC) =",v.b,"U (",v.a,"U",v.c,")")
+            print("BU(AUC) =",v.newSet)
+        elif (v.operation==6):
+            union(v.a, v.b)
+            union(v.c,v.newSet)
+            print("CU(AUB) =",v.c,"U (",v.a,"U",v.b,")")
+            print("CU(AUB) =",v.newSet)
             
     if (v.chosenOperation==2):
         if (v.operation==1):
@@ -133,6 +146,16 @@ def operate():
             intersection(v.newSet,v.a)
             print("A∩(B∩C) =",v.a,"∩ (",v.b,"∩",v.c,")")
             print("A∩(B∩C) =",v.newSet)
+        elif (v.operation==5):
+            intersection(v.a, v.c)
+            intersection(v.b,v.newSet)
+            print("B∩(A∩C) =",v.b,"∩ (",v.a,"∩",v.c,")")
+            print("B∩(A∩C) =",v.newSet)
+        elif (v.operation==6):
+            intersection(v.a, v.c)
+            intersection(v.b,v.newSet)
+            print("C∩(A∩B) =",v.c,"∩ (",v.a,"∩",v.b,")")
+            print("C∩(A∩B) =",v.newSet)
     
     if (v.chosenOperation==3):
         if (v.operation==1):
@@ -165,6 +188,7 @@ def operate():
             
     
 def setsLoop():
+    #while(v.endCalculator!=)
         print(Fore.MAGENTA+Style.BRIGHT+"                              _               _                      ")
         print(Fore.MAGENTA+Style.BRIGHT+"                             | |             | |                     ")
         print(Fore.MAGENTA+Style.BRIGHT+"  ,   _ _|_  ,     __   __,  | |  __         | |  __, _|_  __   ,_   ")
@@ -179,7 +203,8 @@ def setsLoop():
         print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------------------------------------")
         print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||                                                (\__/) ||")
         print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(•ㅅ•) ||                                                 (•ㅅ•) ||")
-        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ                                                   / 　 づ \n")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ                                                   / 　 づ ")
+
         captureSets()
         menuOperations()
         options()
