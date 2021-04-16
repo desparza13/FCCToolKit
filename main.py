@@ -12,16 +12,17 @@ import operations as op
 from colorama import Back,Fore,Style,init
 import programSetUp as psu
 import setUpSets as sus
+import setSucesions as suc
 init(autoreset=True)
 
 psu.menu()
 print(v.menuChoice)
 if(v.menuChoice==1):
-    print("No F")
     su.truthTableLoop()
 elif(v.menuChoice==2):
     sus.setsLoop()
-
+elif(v.menuChoice==3):
+    suc.sucesionsLoop()
 
 
 

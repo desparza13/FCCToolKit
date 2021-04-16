@@ -40,3 +40,12 @@ chosenOperation=0
 operation=0
 newSet=[]
 endCalculator=False
+#------------------------------------------------------------------------------
+#------------------CALCULADORA DE SUCESIONES------------------------------------
+limInferior=0
+limSuperior=0
+formula=""
+elementos=[]
+suma=0
+producto=1
+endSuccessions=False
