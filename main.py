@@ -13,6 +13,7 @@ from colorama import Back,Fore,Style,init
 import programSetUp as psu
 import setUpSets as sus
 import setSucesions as suc
+import setRelations as rel
 init(autoreset=True)
 
 psu.menu()
@@ -23,6 +24,8 @@ elif(v.menuChoice==2):
     sus.setsLoop()
 elif(v.menuChoice==3):
     suc.sucesionsLoop()
+elif(v.menuChoice==4):
+    rel.relationsLoop()
 
 
 

@@ -49,3 +49,26 @@ elementos=[]
 suma=0
 producto=1
 endSuccessions=False
+#------------------------------------------------------------------------------
+#-------------------RELACIONES Y FUNCIONES-------------------------------------
+pairsQuantity=1
+xCoords=[]
+yCoords=[]
+dominio=[]
+codominio=[]
+x=0
+y=0
+noFuncionY=[]
+noFuncionX=1000
+
+
+
+
+
+
+
+
+
+
+
+

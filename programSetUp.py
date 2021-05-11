@@ -23,6 +23,7 @@ def menu():
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 1.Generador de tablas de verdad                                        |")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 2.Calculadora de conjuntos                                             |")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 3.Sucesiones                                                           |")
+    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"| 4.Relaciones                                                           |")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                                                        |")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------------------------------------")
     print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||                                                (\__/) ||")
