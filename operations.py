@@ -6,7 +6,7 @@ Created on Wed Mar  3 12:07:18 2021
 @author: danielaesparza jenniferhernandez
 """
 import variables as v
-import setUp as su
+import setUps as su
 import tables as t
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------

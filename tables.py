@@ -7,7 +7,7 @@ Created on Tue Mar  2 20:48:30 2021
 """
 
 import variables as v
-import setUp as su
+import setUps as su
 from colorama import Back,Fore,Style,init
 init(autoreset=True)
 #-------------------------------------------------------------------------------------------------------
