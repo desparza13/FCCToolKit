@@ -10,23 +10,30 @@ import variables as v
 from colorama import Back,Fore,Style,init
 
 def relationsLoop():
-    instructions() #Función que muestra las instrucciones para el ingreso de datos y hace el ingreso de los mismos
-    #BANNER que anuncia los resultados
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" -----------------------------------------------------------------------------------------------")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                          |")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|               RESULTADOS                 |")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                          |")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||  ")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(•ㅅ•) ||   ")
-    print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ     ")
-    dominio() #Calcula y muestra el dominio
-    codominio() #Calcula y muestra el codominio
-    reflexiva() #Determina si es o no reflexiva
-    simetria() #Determina si es o no simétrica
-    transitividad() #Determina si es o no transitiva y de no serlo muestra que valor falta para que lo sea
-    funcion() #Determina si es o no una función y de no serlo muestra que valores de y tiene cada x que tiene más de uno
+    while(v.endFuncion== False):
+        instructions() #Función que muestra las instrucciones para el ingreso de datos y hace el ingreso de los mismos
+        #BANNER que anuncia los resultados
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" -----------------------------------------------------------------------------------------------")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                          |")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|               RESULTADOS                 |")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"|                                          |")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+" ------------------------------------------")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(\__/) ||  ")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"(•ㅅ•) ||   ")
+        print(Back.WHITE+Fore.BLACK+Style.BRIGHT+"/ 　 づ     ")
+        dominio() #Calcula y muestra el dominio
+        codominio() #Calcula y muestra el codominio
+        reflexiva() #Determina si es o no reflexiva
+        simetria() #Determina si es o no simétrica
+        transitividad() #Determina si es o no transitiva y de no serlo muestra que valor falta para que lo sea
+        funcion() #Determina si es o no una función y de no serlo muestra que valores de y tiene cada x que tiene más de uno
+
+        print(Back.WHITE + Fore.BLACK + Style.BRIGHT + "|  Escriba SALIR si desea salir, si desea seguir escriba algo diferente                                   |")
+
+        end = input(">>")
+        if (end == "SALIR"):
+            v.endFuncion = True
 
 def instructions(): #Función que muestra las instrucciones y pide los valores al usuario
     #BANNER de la opción de menú solicitada

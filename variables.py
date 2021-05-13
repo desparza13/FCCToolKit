@@ -60,6 +60,7 @@ x=0
 y=0
 noFuncionY=[]
 noFuncionX=1000
+endFuncion = False
 
 
 
